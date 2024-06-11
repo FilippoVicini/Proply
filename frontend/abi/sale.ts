@@ -6,7 +6,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const propertySaleAbi = [
+let propertySaleAbi;
+export default  propertySaleAbi = [
     {
         "inputs": [],
         "stateMutability": "nonpayable",
