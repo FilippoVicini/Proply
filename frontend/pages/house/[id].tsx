@@ -1,10 +1,11 @@
 // pages/house/[id].tsx
-
+"use client"
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useState } from 'react';
 import {ConnectButton} from "@rainbow-me/rainbowkit";
-
+import { useState } from "react";
+import { ethers } from "ethers";
+import {propertySaleAbi} from "../../abi/sale";
 const HouseDetail = () => {
     const router = useRouter();
     const { id } = router.query;
@@ -25,6 +26,7 @@ const HouseDetail = () => {
     if (!house) {
         return <div>House not found</div>;
     }
+
 
     return (
         <div className="min-h-screen flex flex-col items-center">
