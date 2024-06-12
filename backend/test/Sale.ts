@@ -5,7 +5,7 @@ describe("PropertySale", function () {
     async function deployPropertySaleFixture() {
         // Contracts are deployed using the first signer/account by default
         const [seller, buyer] = await ethers.getSigners();
-
+        const hardhatToken = await ethers.deployContract("Token");
         const PropertySale = await ethers.getContractFactory("PropertySale");
         const propertySale = await PropertySale.deploy();
 
@@ -13,6 +13,7 @@ describe("PropertySale", function () {
     }
 
     describe("Deployment", function () {
+
         it("Should set the right seller", async function () {
             const { propertySale, seller } = await deployPropertySaleFixture();
 
